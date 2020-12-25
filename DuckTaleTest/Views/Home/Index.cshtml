@@ -1,0 +1,88 @@
+﻿@model List<DuckTale.dbmodel.Model.StudentSubject>
+@{
+    ViewData["Title"] = "Display Subject List";
+}
+
+<div class="breadcrumbs">
+    <div class="col-sm-12">
+        <div class="page-header">
+            <div class="page-title">
+                <div class="row">
+                    <div class="col-12 col-md-10">
+                        <ol class="breadcrumb text-right">
+                            <li class="breadcrumb-item">Manage SubjectList</li>
+                            <li></li>
+                        </ol>
+                    </div>
+                    <div class="col-12 col-md-2">
+                        <a href="@Url.Action("Create","Home")" class="btn btn-primary float-right" style="margin-right: 5%;"><i class="fa fa-plus mr-2"></i>Add Subject</a>
+                        <br />
+                        <br />
+                        <a href="@Url.Action("AddStudentInfo","Student")" class="btn btn-primary float-right" style="margin-right: 5%;"><i class="fa fa-plus mr-2"></i>Add Student</a>
+                        <br />
+                        <br />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<table id="listing_table">
+    <thead>
+        <tr>
+            <th>SubjectName</th>
+            <th>Is Active</th>
+            <th>Modify Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.SubjectName
+                </td>
+
+                <th>
+                    @Html.DisplayFor(modelItem => item.IsActive)
+                </th>
+                <td>
+                    @item.ModifyOn.ToString("dd MM yyyy hh:mm tt")
+                </td>
+                @*<td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+
+<scripts>
+    <link rel="stylesheet" href="@Url.Content("~/css/bootstrap.min.css")">
+    <link href="@Url.Content("~/css/jquery.mCustomScrollbar.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/css/sidebar-menu.css")" rel="stylesheet" />
+    <link rel="stylesheet" href="@Url.Content(string.Format("~/css/layout.css?v={0}",DateTime.Now.Ticks))">
+    <link rel="stylesheet" href="@Url.Content(string.Format("~/css/adminResponsive.css?v={0}",DateTime.Now.Ticks))">
+    <link rel="stylesheet" href="@Url.Content("~/css/responsive.css")">
+    <link rel="stylesheet" href="@Url.Content(string.Format("http://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css?v={0}", DateTime.Now.AddYears(1)))">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/swiper@4.4.1/dist/js/swiper.min.js">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="@Url.Content("~/js/jquery.min.js")"></script>
+    <script src="@Url.Content("~/js/popper.min.js")"></script>
+    <script src="@Url.Content("~/js/bootstrap.min.js")"></script>
+    <script src="@Url.Content("~/js/sidebar-menu.js")"></script>
+    <script src="~/js/nicescroll.min.js"></script>
+    <script src="@Url.Content("~/js/Chart.js")"></script>
+    <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js?v=1.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js?v=1.1"></script>
+    <script src="@Url.Content("~/js/Adminscript.js")"></script>
+    <script src="@Url.Content("~/js/ajax.js")"></script>
+    <script src="@Url.Content("~/js/country.js")"></script>
+
+    <script src="@Url.Content("~/js/custom.js")"></script>
+
+</scripts>
+

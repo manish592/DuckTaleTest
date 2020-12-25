@@ -1,0 +1,74 @@
+﻿@model DuckTaleTest.ViewModels.StudentInfoViewModel
+@{
+    ViewData["Title"] = "Edit";
+    int i = 0;
+
+}
+
+<h1>Edit</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AddStudentInfo">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Class" class="control-label"></label>
+                <select asp-for="Class" class="form-control" asp-items="Model.GetClassName()"></select>
+
+                <span asp-validation-for="Class" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                Subject Name
+                            </th>
+                            <th>
+                                Marks
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.Subjects)
+                        {
+                            <tr>
+                                <td>
+                                    @item.SubjectName
+                                    @Html.Hidden("StudentSubject[" + i + "].StudentInfoFk", Model.StudentFk)
+                                    @Html.Hidden("StudentSubject[" + i + "].StudentMarksFk", item.Id)
+                                </td>
+                                <td>@Html.TextBox("StudentSubject[" + i + "].Marks", "0", new { @class = "form-control" })  </td>
+                            </tr>
+                            i++;
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+
+
+            <div class="form-group">
+                <a asp-action="Index" asp-controller="Student" class="btn btn-primary">Back to List</a>
+                <input type="submit" value="Update" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

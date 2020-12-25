@@ -1,0 +1,50 @@
+﻿tr:nth-child(odd) td {
+    background: #f5f5f5;
+}
+
+td {
+    text-align: left;
+    padding: 10px 15px;
+    font-size: 14px;
+    /*white-space: nowrap;*/
+}
+
+th {
+    text-align: center;
+    font-size: 16px;
+    padding: 10px 15px;
+}
+
+.header {
+    font-size: 16px;
+    font-weight: 600;
+    float: left;
+}
+
+.show-filter-category {
+    float: left;
+    width: 100%;
+    padding: 10px 0px;
+    box-sizing: border-box;
+}
+
+    .show-filter-category .categoty-list-filter {
+        float: left;
+        width: 33.3%;
+        box-sizing: border-box;
+    }
+
+        .show-filter-category .categoty-list-filter .div-with-box-shadow {
+            float: left;
+            width: 100%;
+            padding: 0px 10px;
+            box-sizing: border-box;
+        }
+
+            .show-filter-category .categoty-list-filter .div-with-box-shadow label {
+                float: left;
+                width: 80px;
+                font-weight: 600;
+                margin-right: 10px;
+                font-size: 14px;
+            }

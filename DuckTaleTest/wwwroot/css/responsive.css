@@ -1,0 +1,76 @@
+@media screen and (min-width:1367px) {
+	.body-content-wrap {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: 100vh;
+	}
+
+	.profile-drp-btn {
+		max-width: 107px;
+	}
+
+	footer {
+		position: absolute;
+		width: 100%;
+		bottom: 10px;
+	}
+}
+
+@media screen and (max-width:991px) {
+	.login-wrap {
+		height: 100%;
+		display: inherit;
+	}
+}
+
+@media screen and (max-width:767px) {
+	.login-wrap {
+		overflow: hidden;
+	}
+
+	.corner-top-left-icon {
+		top: -10px;
+		left: -10px;
+	}
+
+	.corner-bottom-right-icon {
+		bottom: -10px;
+		right: -10px;
+	}
+
+	.white-box {
+		overflow: hidden;
+	}
+
+	.order-id-wrap {
+		top: 0px;
+	}
+}
+
+@media screen and (max-width:575px) {
+	header .search-wrap input {
+		width: 100%;
+	}
+
+	.booking-detail-form-wrap .btn.make-payment-btn {
+		margin-bottom: 50px;
+	}
+}
+
+@media screen and (max-width:443px) {
+	.booking-detail-wrap ul li span {
+		width: 100%;
+	}
+
+	.booking-detail-wrap ul li label {
+		width: 100%;
+		padding-left: 0px;
+	}
+}
+
+@media screen and (max-width:360px) {
+	.required-field-tag ul li {
+		width: 100%;
+	}
+}
